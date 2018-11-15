@@ -1,0 +1,14 @@
+bacillus_subtilis
+vibrio_natriegens
+magnetospirillum_magneticum
+acidithiobacillus_ferroxidans
+lactococcus_lactis
+acinetobacter_baylyi
+streptococcus_thermophilus
+azotobacter_vinelandii
+pseudomonas_fluorescens
+saccharomyces_cerevisiae
+pseudomonas_putida
+vibrio_harveyi
+escherichia_coli
+pichia_pastoris

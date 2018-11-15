@@ -1,0 +1,89 @@
+<html>
+<head>
+  <title>Copter</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="/icons/chassidex.png" />
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <script src="/scripts/translate.js"></script>
+  <script src="/scripts/backtable.js"></script>
+  <script src="/tables.js"></script>
+  <script src="/scripts/vue.js"></script>
+  <script src="/scripts/main.js"></script>
+</head>
+<body onload="init()" onhashchange="goto()">
+  <div id="header">
+    <span>Copter (Beta)</span>
+    <a href="https://chassidex.org">
+      <img src="/icons/chassidex-text.png">
+    </a>
+  </div>
+  <div id="content">
+    <div id="start">
+      <p>
+        Copter is an interactive tool that helps you codon optimize your genes for organisms
+        on ChassiDex.
+      </p>
+      <p>
+        <a href="/#pasteseq">Click to Start</a>
+      </p>
+    </div>
+    <div id="pasteseq">
+      <p>
+        Paste your DNA/RNA/protein sequence below:
+        <br><br>
+        <textarea id="seqinput"></textarea>
+      </p>
+      <p>
+        This is a:<br><br>
+        <input type="radio" name="seqtype" value="dna" checked>DNA Sequence<br>
+        <input type="radio" name="seqtype" value="rna">RNA Sequence<br>
+        <input type="radio" name="seqtype" value="protein">Protein Sequence<br>
+        <br><br>
+        <a onclick="analysePasteSeq()">Start optimizing</a>
+      </p>
+    </div>
+    <div id="intapp">
+      <p id="outputArea">
+        <span class="unit" v-for="aa in aas" v-bind:class="{ avoid: aa.isAvoid }">
+          <b class="aaname">{{aa.name}}</b>
+          <select v-model="aa.active">
+            <option v-for="c in aa.codons" v-bind:value="c">
+              {{c}} :{{freqs[c]}}
+            </option>
+          </select>
+        </span>
+      </p>
+      <p>
+        Choose organism:
+        <select class="org" v-model="org_i">
+          <option v-for="(t,i) in tables" v-bind:value="i">
+            {{t.name}}
+          </option>
+        </select>
+        <br><br>
+        <a v-on:click="optimize">Optimize</a>
+        <br><br>
+        <span>Sequences to avoid:</span><br>
+        <span class="avoidseq" v-for="(s,t) in avoid">
+          {{s}}
+          <span class="xbutton" v-on:click="removeavoid(t)">-</span>
+        </span>
+        <br>
+        <input v-model="avoidentry">
+        <a v-on:click="addavoid">Add</a>
+        <br><br>
+        <span>Codons to fix: {{unfixed}}</span>
+        <br><br>
+        <a v-on:click="download">Download Sequence</a>
+        <br><br>
+      </p>
+    </div>
+  </div>
+  <div id="footer">
+    <a href="https://github.com/ChassiDex/cutecodons">
+      <img src="/icons/github.png">
+      View Code
+    </a>
+  </div>
+
+</body>

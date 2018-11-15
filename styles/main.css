@@ -1,0 +1,191 @@
+@font-face {
+  src: url(/fonts/gir.otf);
+  font-family: sansfont;
+}
+@font-face {
+  src: url(/fonts/inconsolata.otf);
+  font-family: monofont;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0mm;
+  margin: 0mm;
+  font-family: sansfont;
+  font-size: 4mm;
+  color: #242729;
+  display: grid;
+  grid-template-rows: 17mm 1fr 15mm;
+  height: 100vh;
+}
+
+#header {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr auto;
+  padding: 5mm;
+  background: #05080a;
+  color: #ffffff;
+  font-size: 5.5mm;
+}
+
+#header img {
+  height: 7mm;
+  width: auto;
+}
+
+#header a {
+  text-decoration: none;
+}
+#footer{
+  background: #05080a;
+  padding: 5mm;
+}
+#footer img{
+  height: 5mm;
+  width: auto;
+  vertical-align: -0.5mm;
+  margin-right: 1mm;
+}
+#footer a{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 5mm;
+}
+#content {
+  text-align: center;
+  overflow-y: scroll;
+  color: #242729;
+}
+#content div{
+  display: none;
+  text-align: center;
+  font-size: 5mm;
+  grid-template-columns: 2fr 1fr;
+}
+#content a{
+  display: inline-block;
+  background: #06c;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 2mm 5mm;
+  font-size: 5mm;
+  border-radius: 10mm;
+}
+#content div p{
+  text-align: justify;
+  padding: 10mm;
+}
+#content div p:nth-child(2){
+  text-align: left;
+}
+#pasteseq textarea{
+  background: #9cf;
+  border: 0.5mm solid #9cf;
+  border-radius: 1mm;
+  padding: 2mm;
+  width: 100%;
+  height: 100mm;
+}
+#pasteseq textarea:focus{
+  outline: none;
+  border: 0.5mm solid #06c;
+  color: #06c;
+  padding: 2mm;
+  font-family: monofont;
+  font-size: 5mm;
+}
+a:hover{
+  cursor: pointer;
+  cursor: hand;
+}
+#outputArea {
+  height: calc(100vh - 45mm);
+  overflow-y: scroll;
+}
+.unit {
+  display: inline-block;
+  font-family: monofont;
+  background: #06c;
+  color: #ffffff;
+  margin: 5mm;
+  border: 0.5mm solid #06c;
+}
+.aaname{
+  display: inline-block;
+  padding: 1mm;
+  padding-left: 2.5mm;
+  font-weight: normal;
+  font-size: 5mm;
+}
+.unit select{
+  background: #fff;
+  font-family: monofont;
+  color: #06c;
+  font-size: 5mm;
+  display: inline-block;
+  padding: 1mm;
+  padding-right: 2.5mm;
+  border: none;
+  outline: none;
+  width: 17mm;
+}
+.avoid{
+  background: #c33;
+  border: 0.5mm solid #c33;
+}
+.avoid select{
+  color: #c33;
+}
+
+
+select.org{
+  font-family: sansfont;
+  background: #9cf;
+  border: 0.5mm solid #9cf;
+  border-radius: 1mm;
+  padding: 2mm;
+  outline: none;
+  font-size: 4mm;
+}
+
+.avoidseq {
+  display: inline-block;
+  background: #c33;
+  color: #fff;
+  padding: 1.5mm;
+  font-family: monofont;
+  font-size: 3.5mm;
+  margin: 1mm 2mm;
+  margin-left: 0mm;
+}
+.xbutton {
+  display: inline-block;
+  font-size: 3.5mm;
+  padding: 0mm 1.5mm;
+  border-radius: 8mm;
+  background: #fff;
+  color: #c33;
+}
+.xbutton:hover{
+  cursor: pointer;
+  cursor: hand;
+}
+#intapp input{
+  background: #9cf;
+  border: 0.5mm solid #9cf;
+  border-radius: 1mm;
+  padding: 2mm;
+  width: 15ch;
+  font-family: monofont;
+  font-size: 4mm; 
+}
+#intapp input:focus{
+  background: #9cf;
+  border: 0.5mm solid #9cf;
+  border-radius: 1mm;
+  padding: 2mm;
+}
