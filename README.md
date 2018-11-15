@@ -1,2 +1,5 @@
-# cutecodons
-A codon usage table generator
+# Copter: the Codon OPtimizER
+
+## To-do list
+- [] Score
+- [] Download
