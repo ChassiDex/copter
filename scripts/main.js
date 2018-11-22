@@ -78,7 +78,7 @@ function runintapp(prot){
         }
       },
       download: function(event){
-        alert(this.dnaseq)
+        download('copter.txt',this.dnaseq);
       },
       addavoid: function () {
         this.avoid.push(this.avoidentry.toUpperCase());
@@ -162,4 +162,16 @@ function search(target,queries){
     }
   }
   return indices
+}
+function download(filename, text) {
+  var el = document.createElement('a');
+  el.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  el.setAttribute('download', filename);
+
+  el.style.display = 'none';
+  document.body.appendChild(el);
+
+  el.click();
+
+  document.body.removeChild(el);
 }
